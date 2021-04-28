@@ -1,0 +1,268 @@
+$buttonColor: #53bdb7;
+$whiteColor: #ffffff;
+$greyColor: #c5c2c2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@mixin button($padding, $margin, $size) {
+  background: $buttonColor;
+  border: 1px solid $buttonColor;
+  border-radius: 3px;
+  margin: $margin;
+  color: $whiteColor;
+  padding: $padding;
+  font-size: $size;
+  cursor: pointer;
+}
+.main-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  // font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  //   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  width: 100%;
+  background: $whiteColor;
+
+  .main-navbar {
+    // background: black;
+    width: 100%;
+    height: auto;
+    .nav-center {
+      // background: coral;
+      width: 90%;
+      height: 100%;
+      margin: 0 auto 1rem;
+      padding-top: 1rem;
+      display: flex;
+      .logo {
+        // background: red;
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      .auth {
+        // background: green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .button {
+          @include button(0.4rem, (0 10px), 1rem);
+        }
+        @media (max-width: 500px) {
+          .button {
+            font-size: 0.8rem;
+            width: 70px;
+          }
+        }
+      }
+    }
+    hr {
+      width: 100%;
+      margin: auto;
+      background: $greyColor;
+      border: 0.1px solid $greyColor;
+    }
+  }
+
+  .fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: $whiteColor;
+    #signup {
+      display: block;
+    }
+  }
+  @media (max-width: 500px) {
+    .main-navbar {
+      width: 100%;
+      .nav-center {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 0;
+      }
+      hr {
+        width: 100%;
+      }
+    }
+  }
+
+  .container {
+    // background-color: coral;
+    padding-top: 2.5rem;
+    .welcome-container {
+      width: 80%;
+      margin: auto;
+      // background-color: coral;
+      .hi-user {
+        position: relative;
+        // background-color: coral;
+        img {
+          width: 45px;
+          height: 45px;
+        }
+        .username {
+          // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          //   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+          position: absolute;
+          top: 0.4rem;
+          margin-left: 1rem;
+          font-size: 1.6rem;
+          font-style: italic;
+          font-weight: 500;
+        }
+      }
+      .flash-card {
+        display: block;
+        background-color: #53bdb810;
+        width: 100%;
+        margin: 1rem auto 0;
+        border: solid 1px $buttonColor;
+        text-align: left;
+        padding: 15px 20px;
+        border-radius: 6px;
+        font-size: 14px;
+        line-height: 0.8rem;
+        color: $buttonColor;
+        position: relative;
+        h3 {
+          letter-spacing: 1px;
+        }
+        p {
+          line-height: 20px;
+          word-spacing: 2px;
+          .member-badge {
+            font-weight: bold;
+            letter-spacing: 1px;
+          }
+          .close {
+            position: absolute;
+            top: 0.7rem;
+            right: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+          }
+        }
+      }
+      .none {
+        display: none;
+      }
+    }
+    //end of welcome container
+    .main-titles {
+      // background-color: blue;
+      margin: 2.5rem auto 0;
+      width: 90%;
+      hr {
+        background: $greyColor;
+        border: 0.1px solid $greyColor;
+        margin: 1rem 0;
+      }
+      .title {
+        letter-spacing: 1px;
+        // background-color: coral;
+        position: relative;
+
+        .tooltip {
+          font-size: 14px;
+          background-color: $buttonColor;
+          color: $whiteColor;
+          padding: 4px 13px;
+          border-radius: 4px;
+          cursor: pointer;
+          display: inline-block;
+          position: absolute;
+          top: 3px;
+          left: 160px;
+          .tooltiptext {
+            visibility: hidden;
+            padding: 10px;
+            position: absolute;
+            top: -88px;
+            left: -2px;
+            font-size: 14px;
+            border-radius: 5px;
+            font-weight: lighter;
+            background-color: rgb(59, 58, 58);
+            color: $whiteColor;
+            width: 310px;
+
+            &::after {
+              content: " ";
+              position: absolute;
+              top: 100%; /* At the bottom of the tooltip */
+              left: 3%;
+              border-width: 7px;
+              border-style: solid;
+              border-color: rgb(59, 58, 58) transparent transparent transparent;
+            }
+          }
+          @media (max-width: 500px) {
+            .tooltiptext {
+              left: -150px;
+              &::after {
+                left: 50%;
+              }
+            }
+          }
+        }
+        .tooltip {
+          &:hover {
+            .tooltiptext {
+              visibility: visible;
+            }
+          }
+        }
+      }
+      .titles-area {
+        // background-color: coral;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .badge-container {
+          margin-bottom: 2rem;
+        }
+        h5 {
+          margin-bottom: 1.3rem;
+        }
+        .badge {
+          position: relative;
+          width: 180px;
+          text-align: center;
+          background-color: rgb(241, 238, 238);
+          height: 165px;
+          border: 1px solid rgb(182, 178, 178);
+          border-radius: 5px;
+          p {
+            position: absolute;
+            bottom: 0rem;
+            font-size: 14px;
+            width: 100%;
+            // padding-top: 3.5px;
+            background-color: rgb(207, 207, 207);
+            height: 43px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-top: 1px solid rgb(182, 178, 178);
+          }
+        }
+      }
+    }
+  }
+}
+
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+body {
+  position: relative;
+}

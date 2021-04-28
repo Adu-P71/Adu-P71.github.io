@@ -35,7 +35,7 @@ form.addEventListener("submit", (e) => {
   const user = validate()
   setTimeout(() => {
     if (user) {
-      return (window.location = "index.html")
+      return (window.location = "studentHome.html")
     }
     flashError.classList.add("block")
     loader.classList.remove("visible")

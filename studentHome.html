@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student home</title>
+    <link rel="stylesheet" href="./css/studentHome.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="main-navbar">
+        <div class="nav-center">
+          <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="Logo" /></a>
+          </div>
+          <div class="auth">
+            <button class="button" id="logout">Log out</button>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <div class="container">
+        <div class="welcome-container">
+          <div class="hi-user">
+            <img src="./img/user_icon.png" alt="person icon" />
+            <span class="username">Hi Test</span>
+          </div>
+          <div class="flash-card">
+            <h3>Congratulations!</h3>
+            <br />
+            <p>
+              You have received
+              <span class="member-badge">Member Badge! </span>Thank you for
+              becoming a member at Egyan. <span class="close">x</span>
+            </p>
+          </div>
+        </div>
+        <div class="main-titles">
+          <div class="title">
+            <h2>Your Badges</h2>
+            <div class="tooltip">
+              ?
+              <p class="tooltiptext">
+                Collect more points to get more badges. The more courses you
+                participate and complete you will get more badges
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="titles-area">
+            <div class="badge-container">
+              <h5>Total Points: 0pts</h5>
+              <div class="badge">
+                <img
+                  src="./img/badges/member_badge.png"
+                  alt="member badge"
+                /><br />
+                <p>Member Badge</p>
+              </div>
+            </div>
+            <div class="badge-container">
+              <h5>Total Points: 0pts</h5>
+              <div class="badge">
+                <img
+                  src="./img/badges/member_badge.png"
+                  alt="member badge"
+                /><br />
+                <p>Member Badge</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/studentHome.js"></script>
+  </body>
+</html>
