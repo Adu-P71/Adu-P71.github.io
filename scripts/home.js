@@ -13,7 +13,7 @@ login.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset
 
-  if (scrollHeight > 375) {
+  if (scrollHeight > 365) {
     navBar.classList.add("fixed-nav")
     signUp.classList.add("block")
   } else {

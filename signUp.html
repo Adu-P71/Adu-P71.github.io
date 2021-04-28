@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div class="sign-in-page">
+      <header class="header">
+        <a href="index.html">
+          <img src="./img/logo.png" alt="logo" />
+        </a>
+      </header>
+      <div class="main-application">
+        <!-- <header class="main-header"> -->
+        <h2>Sign in to Egyan Learning Center</h2>
+        <p class="flash-card flash-error">Incorrect username or password</p>
+        <!-- </header> -->
+        <div class="form-body">
+          <form>
+            <div class="form-fields signUp">
+              <label for="username">Username </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control"
+              />
+            </div>
+            <div class="form-fields signUp">
+              <label for="email">Email address </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+              />
+            </div>
+            <div class="form-fields signUp password">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-control"
+              />
+              <!-- <a href="/login.html">Forgot password?</a> -->
+              <span class="tooltiptext">password should be 8 characters long and contain an least one digit</span>
+            </div>
+
+            <div class="form-fields">
+              <input
+                type="submit"
+                name="submit"
+                value="Create account"
+                class="submit form-control"
+              />
+              <div class="loader-body">
+                <div class="loader"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <p class="flash-card">
+          Already have an account? <a href="login.html">Sign in</a>
+        </p>
+      </div>
+    </div>
+    <script src="./scripts/signup.js"></script>
+  </body>
+</html>

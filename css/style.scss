@@ -1,0 +1,438 @@
+$buttonColor: #53bdb7;
+$whiteColor: #ffffff;
+$greyColor: #c5c2c2;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+body {
+  position: relative;
+}
+@mixin button($padding, $margin, $size) {
+  background: $buttonColor;
+  border: 1px solid $buttonColor;
+  border-radius: 3px;
+  margin: $margin;
+  color: $whiteColor;
+  padding: $padding;
+  font-size: $size;
+  cursor: pointer;
+}
+.homepage {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  // height: 700px;
+  // min-height: 700px;
+  width: 100%;
+  background: $whiteColor;
+
+  //banner area
+  .banner-area {
+    background: url("../img/header_img.png");
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    .main-navbar {
+      // background: black;
+      width: 100%;
+      height: auto;
+      .nav-center {
+        // background: coral;
+        width: 80%;
+        height: 100%;
+        margin: 0 auto 1rem;
+        padding-top: 1rem;
+        display: flex;
+        .logo {
+          // background: red;
+          flex: 1;
+          display: flex;
+          align-items: center;
+        }
+        .auth {
+          // background: green;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .button {
+            @include button(0.4rem, (0 10px), 1rem);
+          }
+          @media (max-width: 500px) {
+            .button {
+              font-size: 0.8rem;
+              width: 70px;
+            }
+          }
+        }
+      }
+      hr {
+        width: 90%;
+        margin: auto;
+        background: $greyColor;
+        border: 0.1px solid $greyColor;
+      }
+    }
+
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: $whiteColor;
+      #signup {
+        display: block;
+      }
+    }
+    @media (max-width: 500px) {
+      .main-navbar {
+        width: 100%;
+        .nav-center {
+          width: 100%;
+          padding: 1rem;
+          margin-bottom: 0;
+        }
+        hr {
+          width: 100%;
+        }
+      }
+    }
+    .hero {
+      // background: $greyColor;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $whiteColor;
+      p {
+        font-size: 2.5rem;
+        text-align: center;
+        .button {
+          @include button(0.5rem, 0, 1rem);
+          margin-top: 40px;
+          a {
+            color: $whiteColor;
+          }
+        }
+      }
+
+      span {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 500px) {
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+  //end of banner area
+
+  //courses area
+  .courses-area {
+    width: 100%;
+    .courses {
+      width: 83%;
+      margin: 4rem auto 0;
+      .heading {
+        h1 {
+          font-size: 2rem;
+        }
+        hr {
+          margin-top: 0.7rem;
+          background: $greyColor;
+          // height: 5px;
+          border: 1px solid $greyColor;
+        }
+      }
+      .course-templates {
+        // margin-top: 3rem;
+        .course {
+          margin-top: 2.5rem;
+          // background: coral;S
+          .top {
+            cursor: pointer;
+            padding: 0.2rem 0.6rem;
+            background: $buttonColor;
+            display: flex;
+            .title {
+              display: flex;
+              align-items: center;
+              flex: 1;
+              // background: coral;
+              img {
+                display: block;
+                height: 25px;
+                width: 25px;
+              }
+              h2 {
+                color: $whiteColor;
+                font-size: 1rem;
+                margin-left: 0.4rem;
+              }
+            }
+            .stars {
+              img {
+                height: 40px;
+                width: 40px;
+              }
+            }
+          }
+
+          .summary {
+            width: 95%;
+            height: 0;
+            overflow: hidden;
+            margin: auto;
+            transition: height 300ms;
+            // padding-top: 1rem;
+            // background: coral;
+            .info {
+              display: flex;
+              margin: 1rem 0;
+              h2 {
+                font-size: 1rem;
+                min-width: 170px;
+                // background: black;
+              }
+              @media (max-width: 500px) {
+                h2 {
+                  min-width: 120px;
+                }
+              }
+            }
+          }
+          .show-summary {
+            height: 200px;
+            transition: height 300ms;
+          }
+          @media (max-width: 500px) {
+            .show-summary {
+              height: 330px;
+              transition: height 300ms;
+            }
+          }
+        }
+      }
+    }
+  }
+  //end of courses area
+
+  .footer {
+    min-height: 200px;
+    margin-top: 3rem;
+    padding: 1rem 0 0 2rem;
+    background: rgb(0, 0, 0);
+    color: $whiteColor;
+    p {
+      position: relative;
+      line-height: 3rem;
+      img {
+        height: 60px;
+        position: absolute;
+        left: 100px;
+      }
+    }
+  }
+}
+//end of homepage
+
+//sign in page
+
+.sign-in-page {
+  .header {
+    // background: coral;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    padding-top: 15px;
+  }
+
+  .main-application {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    // background: lightblue;
+    height: calc(100vh - 100px);
+    padding-top: 0.2rem;
+    h2 {
+      text-align: center;
+      font-weight: lighter;
+      // margin-top: 0.5rem;
+    }
+    .form-body {
+      width: 310px;
+      margin: auto;
+      padding-top: 3rem;
+      border: 1px solid #eaecef;
+      border-radius: 6px;
+      background: #f6f8fa;
+      font-size: 14px;
+      margin-top: 25px !important;
+      padding: 20px;
+      form {
+        .form-fields {
+          position: relative;
+          .loader-body {
+            visibility: hidden;
+            // display: none;
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #53bdb841;
+            border-radius: 6px;
+            height: 32px;
+            justify-content: center;
+            align-items: center;
+            .loader {
+              color: green;
+              border: 1px solid #f3f3f3; /* Light grey */
+              border-top: 1px solid #a2a6a8; /* Blue */
+              border-radius: 50%;
+              width: 25px;
+              height: 25px;
+              animation: spin 500ms linear infinite;
+            }
+
+            @keyframes spin {
+              0% {
+                transform: rotate(0deg);
+              }
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+          }
+          .visible {
+            // display: flex;
+            visibility: visible;
+          }
+          label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 400;
+            text-align: left;
+          }
+          a {
+            font-size: 12px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $buttonColor;
+          }
+        }
+        .signUp {
+          label {
+            &::after {
+              content: "*";
+              color: rgb(203, 36, 49);
+              padding-left: 5px;
+            }
+          }
+          .tooltiptext {
+            visibility: hidden;
+            width: 100%;
+            background-color: rgb(136, 133, 133);
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            font-size: 12px;
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+            bottom: -1.5rem;
+            right: 0;
+            &::after {
+              content: " ";
+              position: absolute;
+              bottom: 100%; /* At the top of the tooltip */
+              left: 12px;
+              margin-left: 0;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent rgb(136, 133, 133)
+                transparent;
+            }
+          }
+          .visible {
+            visibility: visible;
+          }
+        }
+
+        .form-control {
+          margin-top: 5px;
+          margin-bottom: 15px;
+          width: 100%;
+          padding: 5px 12px;
+          font-size: 14px;
+          line-height: 20px;
+          color: #24292e;
+          vertical-align: middle;
+          background-color: $whiteColor;
+          background-repeat: no-repeat;
+          background-position: right 8px center;
+          border: 1px solid #e1e4e8;
+          border-radius: 6px;
+          outline: none;
+          box-shadow: #e1e4e8;
+        }
+        .submit {
+          background: $buttonColor;
+          color: $whiteColor;
+          margin-bottom: 0;
+          letter-spacing: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+    .flash-card {
+      width: 310px;
+      margin: 1rem auto 0;
+      border: solid 1px #c5c2c2;
+      text-align: center;
+      padding: 15px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      a {
+        color: #0366d6;
+        font-size: 13px;
+      }
+    }
+
+    .flash-error {
+      display: none;
+      position: relative;
+      color: #ff7b72;
+      background-color: rgba(255, 0, 0, 0.068);
+      font-size: 13px;
+      border: solid 1px #ff7b7246;
+      .close {
+        position: absolute;
+        top: 0.8rem;
+        right: 1rem;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+    .none {
+      display: none;
+    }
+    .block {
+      display: block;
+    }
+  }
+}
+
+// end of sign in page

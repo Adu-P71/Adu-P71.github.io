@@ -25,7 +25,7 @@ body {
 }
 
 .homepage .banner-area {
-  background: url("/img/header_img.png");
+  background: url("../img/header_img.png");
   min-height: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,7 +75,7 @@ body {
           justify-content: center;
 }
 
-.homepage .banner-area .main-navbar .nav-center .auth button {
+.homepage .banner-area .main-navbar .nav-center .auth .button {
   background: #53bdb7;
   border: 1px solid #53bdb7;
   border-radius: 3px;
@@ -87,7 +87,7 @@ body {
 }
 
 @media (max-width: 500px) {
-  .homepage .banner-area .main-navbar .nav-center .auth button {
+  .homepage .banner-area .main-navbar .nav-center .auth .button {
     font-size: 0.8rem;
     width: 70px;
   }
@@ -146,11 +146,7 @@ body {
   text-align: center;
 }
 
-.homepage .banner-area .hero span {
-  font-size: 1.2rem;
-}
-
-.homepage .banner-area .hero button {
+.homepage .banner-area .hero p .button {
   background: #53bdb7;
   border: 1px solid #53bdb7;
   border-radius: 3px;
@@ -160,6 +156,15 @@ body {
   font-size: 1rem;
   cursor: pointer;
   margin-top: 40px;
+}
+
+.homepage .banner-area .hero p .button a {
+  color: #ffffff;
+}
+
+.homepage .banner-area .hero span {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 500px) {
@@ -257,7 +262,7 @@ body {
 }
 
 .homepage .courses-area .courses .course-templates .course .show-summary {
-  height: 300px;
+  height: 200px;
   -webkit-transition: height 300ms;
   transition: height 300ms;
 }
@@ -289,12 +294,8 @@ body {
   left: 100px;
 }
 
-.auth-background {
-  position: absolute;
-  top: 0;
+.sign-in-page .header {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.842);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,6 +305,212 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 100px;
+  padding-top: 15px;
+}
+
+.sign-in-page .main-application {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: calc(100vh - 100px);
+  padding-top: 0.2rem;
+}
+
+.sign-in-page .main-application h2 {
+  text-align: center;
+  font-weight: lighter;
+}
+
+.sign-in-page .main-application .form-body {
+  width: 310px;
+  margin: auto;
+  padding-top: 3rem;
+  border: 1px solid #eaecef;
+  border-radius: 6px;
+  background: #f6f8fa;
+  font-size: 14px;
+  margin-top: 25px !important;
+  padding: 20px;
+}
+
+.sign-in-page .main-application .form-body form .form-fields {
+  position: relative;
+}
+
+.sign-in-page .main-application .form-body form .form-fields .loader-body {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #53bdb841;
+  border-radius: 6px;
+  height: 32px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sign-in-page .main-application .form-body form .form-fields .loader-body .loader {
+  color: green;
+  border: 1px solid #f3f3f3;
+  /* Light grey */
+  border-top: 1px solid #a2a6a8;
+  /* Blue */
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin 500ms linear infinite;
+          animation: spin 500ms linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.sign-in-page .main-application .form-body form .form-fields .visible {
+  visibility: visible;
+}
+
+.sign-in-page .main-application .form-body form .form-fields label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.sign-in-page .main-application .form-body form .form-fields a {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #53bdb7;
+}
+
+.sign-in-page .main-application .form-body form .signUp label::after {
+  content: "*";
+  color: #cb2431;
+  padding-left: 5px;
+}
+
+.sign-in-page .main-application .form-body form .signUp .tooltiptext {
+  visibility: hidden;
+  width: 100%;
+  background-color: #888585;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 12px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  bottom: -1.5rem;
+  right: 0;
+}
+
+.sign-in-page .main-application .form-body form .signUp .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  /* At the top of the tooltip */
+  left: 12px;
+  margin-left: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #888585 transparent;
+}
+
+.sign-in-page .main-application .form-body form .signUp .visible {
+  visibility: visible;
+}
+
+.sign-in-page .main-application .form-body form .form-control {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292e;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: #e1e4e8;
+          box-shadow: #e1e4e8;
+}
+
+.sign-in-page .main-application .form-body form .submit {
+  background: #53bdb7;
   color: #ffffff;
+  margin-bottom: 0;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.sign-in-page .main-application .flash-card {
+  width: 310px;
+  margin: 1rem auto 0;
+  border: solid 1px #c5c2c2;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.sign-in-page .main-application .flash-card a {
+  color: #0366d6;
+  font-size: 13px;
+}
+
+.sign-in-page .main-application .flash-error {
+  display: none;
+  position: relative;
+  color: #ff7b72;
+  background-color: rgba(255, 0, 0, 0.068);
+  font-size: 13px;
+  border: solid 1px #ff7b7246;
+}
+
+.sign-in-page .main-application .flash-error .close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.sign-in-page .main-application .none {
+  display: none;
+}
+
+.sign-in-page .main-application .block {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
